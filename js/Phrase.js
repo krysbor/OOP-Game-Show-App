@@ -13,7 +13,7 @@ class Phrase {
             if (character !== ' ') {
                 liElement.className = `hide letter ${character}`
             } else {
-                liElement.className = 'hide space'
+                liElement.className = 'space'
             }
             liElement.textContent = character
             ul.appendChild(liElement)

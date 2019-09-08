@@ -40,4 +40,28 @@ class Game {
         this.activePhrase = this.getRandomPhrase()
         this.activePhrase.addPhraseToDisplay()
     };
+    /**
+    * Checks for winning move
+    * @return {boolean} True if game has been won, false if game wasn't
+    won
+    */
+    checkForWin() {
+        const liElements = document.querySelectorAll('div > ul > li')
+        let total = 0
+        let guessed = 0
+        liElements.forEach(element => {
+            if (element.className !== 'space') {
+                total += 1
+                if (element.className.slice(0, 4) === 'show') {
+                    guessed += 1
+                }
+            }
+        })
+        if (total == guessed) {
+            return true
+        } else {
+            return false
+        }
+        //console.log(liElements[0].className.slice(0, 4))
+    };
 }
