@@ -98,4 +98,24 @@ class Game {
             gameMessage.textContent = 'You lose!'
         }
     };
+    /**
+    * Handles onscreen keyboard button clicks
+    * @param (HTMLButtonElement) button - The clicked button element
+    */
+    handleInteraction(button) {
+        let letterPressed = button.textContent
+         if (game.activePhrase.checkLetter(letterPressed)) {
+             button.className += ' chosen'
+             game.activePhrase.showMatchedLetter(letterPressed)
+             button.disabled = true
+             if (game.checkForWin() == true) {
+                 game.gameOver(true)
+             }
+         } else {
+             button.disabled = true
+             button.className += ' wrong'
+             game.removeLife()
+         }
+
+    };
 }
