@@ -2,7 +2,7 @@ class Game {
     constructor() {
         this.missed = 0
         this.phrases = this.createPhrases()
-        this.acrivePhrase = 'null'
+        this.activePhrase = 'null'
     }
     /**
     * Creates phrases for use in game
@@ -28,7 +28,8 @@ class Game {
     * @return {Object} Phrase object chosen to be used
     */
     getRandomPhrase() {
-        let randomNumber = Math.floor(Math.random() * 6)
+        let randomNumber = Math.floor(Math.random() * 5)
+        console.log(randomNumber)
         return this.phrases[randomNumber]
     };
     /**
@@ -38,6 +39,7 @@ class Game {
         let overlay = document.querySelector('#overlay')
         overlay.style.display = 'none'
         this.activePhrase = this.getRandomPhrase()
+        console.log(this.activePhrase)
         this.activePhrase.addPhraseToDisplay()
     };
     /**
