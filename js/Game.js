@@ -64,4 +64,38 @@ class Game {
         }
         //console.log(liElements[0].className.slice(0, 4))
     };
+    /**
+    * Increases the value of the missed property
+    * Removes a life from the scoreboard
+    * Checks if player has remaining lives and ends game if player is out
+    */
+    removeLife() {
+        const lives = document.querySelectorAll('ol > li > img')
+        for(let i=0; i<lives.length; i+=1) {
+            if (lives[i].getAttribute('src') === 'images/liveHeart.png') {
+                lives[i].setAttribute('src', 'images/lostHeart.png')
+                break
+            }
+        }
+        this.missed += 1
+        if (this.missed === 5) {
+            this.gameOver(false)
+        }
+    };
+    /**
+    * Displays game over message
+    * @param {boolean} gameWon - Whether or not the user won the game
+    */
+    gameOver(gameWon) {
+        let overlay = document.querySelector('#overlay')
+        let gameMessage = document.querySelector('#game-over-message')
+        overlay.style.display = 'flex'
+        if (gameWon == true) {
+            overlay.className = 'win'
+            gameMessage.textContent = 'Great job!'
+        } else {
+            overlay.className = 'lose'
+            gameMessage.textContent = 'You lose!'
+        }
+    };
 }
