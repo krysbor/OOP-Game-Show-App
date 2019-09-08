@@ -21,7 +21,29 @@ class Phrase {
 
 
     }
-    showMatchedLetter(){
+    /**
+    * Checks if passed letter is in phrase
+    * @param (string) letter - Letter to check
+    */
+    checkLetter(letter) {
+        let phrase = game.activePhrase
+        if (phrase.phrase.includes(letter)) {
+            return true
+        } else {
+            return false
+        }
 
-    }
+    };
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter) {
+        const liElements = document.querySelectorAll('div > ul > li')
+        liElements.forEach(element => {
+            if (element.textContent === letter) {
+                element.className = `show letter ${letter}`
+            }
+        })
+    };
 }
