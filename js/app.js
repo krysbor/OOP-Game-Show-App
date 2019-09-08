@@ -27,4 +27,10 @@ buttons.addEventListener('click', (event) => {
     //event.target.disabled = true
 })
 
+const body = document.querySelector('body')
+body.addEventListener('keyup', event => {
+    let activeKey = game.keyboardInteraction(event.key)
+    game.handleInteraction(activeKey)
+})
+
 

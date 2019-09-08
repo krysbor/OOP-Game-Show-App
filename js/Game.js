@@ -29,7 +29,6 @@ class Game {
     */
     getRandomPhrase() {
         let randomNumber = Math.floor(Math.random() * 5)
-        console.log(randomNumber)
         return this.phrases[randomNumber]
     };
     /**
@@ -39,7 +38,6 @@ class Game {
         let overlay = document.querySelector('#overlay')
         overlay.style.display = 'none'
         this.activePhrase = this.getRandomPhrase()
-        console.log(this.activePhrase)
         this.activePhrase.addPhraseToDisplay()
     };
     /**
@@ -120,4 +118,14 @@ class Game {
          }
 
     };
+    keyboardInteraction(key) {
+        let keyboardElements = document.querySelectorAll('#qwerty > div > button')
+        let activeElement = 'null'
+        keyboardElements.forEach(element => {
+            if (element.textContent === key) {
+                activeElement = element
+            }
+        })
+        return activeElement
+    }
 }
