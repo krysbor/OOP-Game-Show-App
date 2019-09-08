@@ -1,3 +1,4 @@
+/* Resets the gameboard between games. */
 const reloadGame = () => {
     let liElements = document.querySelectorAll('div > ul > li')
     liElements.forEach(element => {element.parentNode.removeChild(element)})
@@ -24,7 +25,6 @@ const buttons = document.querySelector('#qwerty')
 buttons.addEventListener('click', (event) => {
     if (event.target.className === 'key')
     game.handleInteraction(event.target)
-    //event.target.disabled = true
 })
 
 const body = document.querySelector('body')

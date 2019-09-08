@@ -8,7 +8,7 @@
   --color-lose: #D94545;
   --color-start: #5b85b7;
   --color-neutral: #445069;
-  --color-neutral-light: #D2D2D2;
+  --color-neutral-light: white;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
   --font-size-large: 60px;
@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background: linear-gradient(to right, #dce35b, #45b649);
 }
 
 li, ol, ul {
@@ -86,7 +87,8 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: white;
+  font-family: 'Chewy', cursive;
 }
 
 
@@ -111,7 +113,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: #00b7ff;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -177,10 +179,11 @@ button {
 
 .title {
   color: #FFF;
+  font-family: 'Chewy', cursive;
 }
 
 .start {
-  background-color: #3a3f58;
+  background: linear-gradient(to right, #dce35b, #45b649);
 }
 
 .start a {

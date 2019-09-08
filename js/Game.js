@@ -62,7 +62,6 @@ class Game {
         } else {
             return false
         }
-        //console.log(liElements[0].className.slice(0, 4))
     };
     /**
     * Increases the value of the missed property
@@ -118,6 +117,10 @@ class Game {
          }
 
     };
+    /**
+    * Handles user keyboard inputs
+    * @param (string) key - The pressed key
+    */
     keyboardInteraction(key) {
         let keyboardElements = document.querySelectorAll('#qwerty > div > button')
         let activeElement = 'null'
